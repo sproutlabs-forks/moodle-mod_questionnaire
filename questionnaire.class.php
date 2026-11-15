@@ -3534,10 +3534,10 @@ class questionnaire {
                     $sectionlabel = $chartlabels[$key];
                 }
                 // If all questions of $section are unseen then don't show feedbackscores for this section.
-                if ($compare && !is_nan($scorepercent[$key])) {
+                if ($this->survey->feedbackscores && $compare && !is_nan($scorepercent[$key])) {
                     $table->data[] = array($sectionlabel, $scorepercent[$key] . '%' . $oppositescore,
                         $allscorepercent[$key] . '%' . $oppositeallscore);
-                } else if (isset($allscorepercent[$key]) && !is_nan($allscorepercent[$key])) {
+                } else if ($this->survey->feedbackscores && isset($allscorepercent[$key]) && !is_nan($allscorepercent[$key])) {
                     $table->data[] = array($sectionlabel, $allscorepercent[$key] . '%' . $oppositeallscore);
                 }
             }
