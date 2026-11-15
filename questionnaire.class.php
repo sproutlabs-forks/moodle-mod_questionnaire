@@ -2339,6 +2339,7 @@ class questionnaire {
             $respcols = new stdClass();
             for ($i = 0; $i < $colnumber; $i++) {
                 $colname = 'respondentscolumn'.$i;
+                $respcols->{$colname} = new stdClass();
                 for ($j = 0; $j < $lines; $j++) {
                     $respcols->{$colname}->respondentlink[] = $resparr[$a];
                     $a++;
